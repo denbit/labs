@@ -44,8 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
+    <Compile Include="lab9.cs" />
+    <Compile Include="lab7.cs" />
+    <Compile Include="lab8.cs" />
+    <Compile Include="lab6.cs" />
+    <Compile Include="lab3.cs" />
+    <Compile Include="lab4.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

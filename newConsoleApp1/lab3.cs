@@ -3,9 +3,9 @@ using System;
 
 namespace newConsoleApp1
 {
-public class Class1
+public class lab3
 {
-	public Class1()
+	public lab3()
 	{
 	}
       public  void write() => Console.WriteLine("it is arrow function");

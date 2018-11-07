@@ -5,7 +5,7 @@ using System.Text;
 
 namespace newConsoleApp1
 {
-    class Class2
+    class lab8
     {
     }
 }

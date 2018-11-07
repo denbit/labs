@@ -10,7 +10,7 @@ namespace newConsoleApp1
         static void Main(string[] args)
         {
 
-            Class1 testing = new Class1();
+            lab3 testing = new lab3();
             testing.write();
             Console.WriteLine("Enter param:");
             string s = Console.ReadLine();
