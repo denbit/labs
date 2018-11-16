@@ -7,5 +7,9 @@ namespace newConsoleApp1
 {
     class lab8
     {
+        lab8()
+        {
+
+        }
     }
 }
