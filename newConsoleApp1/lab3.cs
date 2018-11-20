@@ -14,7 +14,7 @@ namespace newConsoleApp1
         public void write(string s) => Console.WriteLine($"it is arrow function with param {s}");
         public void Cortage()
         {
-            var cort = (3, name: 4);
+            (int, int name) cort = (3, name: 4);
 
             write(Convert.ToString(cort.Item1));
             write(Convert.ToString(cort.name));
@@ -119,41 +119,59 @@ namespace newConsoleApp1
         public void Cw8()
         {
             char[] s = Console.ReadLine().ToCharArray();
-
-            for(byte i = 0, ct=0; i < s.Length;ct+=2,i++)
-            {
+             string rev = "";
+            for(byte i = 0, ct=1,lt=0; i < s.Length;ct+=2,lt+=2,i++)
+            { 
 
                 if (ct <= (s.Length-1))
                 {
-                    Console.Write(s[ct]);
-                    
+                    Console.Write(s[ct]);                    
                 }
                 else
-                {
-                    ct = 1;
-                    Console.Write(s[ct]);
-                }
-
+                   break;
             }
-
-        }
-        public void Cw9()
-        {
-            char[] s = Console.ReadLine().ToCharArray();
-            StringBuilder sb;
+            //Console.Write("\n");
+           
             for (byte i = 0, ct = 0; i < s.Length; ct += 2, i++)
             {
 
                 if (ct <= (s.Length - 1))
                 {
-                    Console.Write(s[ct]);
-
+                    rev=rev+s[ct];
                 }
                 else
-                {
-                    ct = 1;
-                    Console.Write(s[ct]);
+                    break;
+            }
+            char[] reva =rev.ToCharArray();
+            Array.Reverse(reva);
+            Console.WriteLine(reva);
+        
+        }
+        public void Cw9()
+        {
+            char[] s = Console.ReadLine().ToCharArray();
+            bool oden = true;
+            if ((s.Length % 2) == 0)
+            {
+                oden = true;
+            }
+            else {
+                oden = false;
+
+            }
+            int osize = s.Length / 2;
+            int noto = osize + Convert.ToInt32(oden);
+            string st="";
+            for (byte i = 0, ct = 0,lt=0; i < s.Length; ct++,lt++, i++)
+            {
+                if (lt <= (noto)) {
+                    Console.Write(s[s.Length-lt-1]);
                 }
+                if (ct <= (osize))
+                {
+                    Console.Write(s[ct]);
+
+                }              
 
             }
 

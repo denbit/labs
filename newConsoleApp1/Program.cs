@@ -11,7 +11,7 @@ namespace newConsoleApp1
         {
 
             lab3 lb3 = new lab3();
-            lb3.Cw8();
+            lb3.Cw9();
             Console.ReadKey();
             /*   testing.write();
                Console.WriteLine("Enter param:");
