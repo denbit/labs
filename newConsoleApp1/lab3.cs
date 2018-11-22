@@ -153,21 +153,24 @@ namespace newConsoleApp1
             bool oden = true;
             if ((s.Length % 2) == 0)
             {
-                oden = true;
+                oden = false;
             }
             else {
-                oden = false;
+                oden = true;
 
             }
             int osize = s.Length / 2;
             int noto = osize + Convert.ToInt32(oden);
             string st="";
+            Console.WriteLine($"oden is {osize} even is {noto}");
             for (byte i = 0, ct = 0,lt=0; i < s.Length; ct++,lt++, i++)
             {
-                if (lt <= (noto)) {
+              //  Console.WriteLine(" iteration"+i+"\n");
+
+                if (lt < (noto)) {
                     Console.Write(s[s.Length-lt-1]);
                 }
-                if (ct <= (osize))
+                if (ct < (osize))
                 {
                     Console.Write(s[ct]);
 
