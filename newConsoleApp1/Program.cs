@@ -17,7 +17,7 @@ namespace newConsoleApp1
             //lb3.Cw9();
             //  (new lab6()).run();
             //(new lab7()).Cw2(@"test.txt");
-            (new lab7()).Cw3();
+            (new lab7()).Cw6();
 
             Console.ReadKey();
 

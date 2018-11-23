@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -54,6 +55,47 @@ namespace newConsoleApp1
             DirectoryInfo d = new DirectoryInfo(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
             view(d);
         }
+        public void Cw4()
+        {
+            DirectoryInfo d = new DirectoryInfo(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
+            StreamWriter fs = new StreamWriter("filelist.txt",true,Encoding.Unicode);
+            foreach (var file in d.EnumerateFiles())
+            {
+                string line = file.Name + " " + file.Directory + " " + file.LastWriteTime.ToString();
+                fs.WriteLine(line);
+            }
+            fs.Close();
+        }
+        public void Cw5()
+        {
+            StreamReader ts = new StreamReader("filelist.txt", true);
+            string line;
+            
+            Console.WriteLine("Symbols in file " + ts.ReadToEnd().Replace("\r\n", "\r").Length);
+            ts.BaseStream.Seek(0, 0);
+            int count = 0;
+            int sz = 0;
+            while ((line = ts.ReadLine()) != null)
+            {
+                count++;
+                Console.WriteLine($"Line #{count} contain {line.Length} symbols");
+                sz += line.Length;
+            }
+            Console.WriteLine("Lines:"+count);
+            Console.WriteLine( sz);
+            ts.Close();
+
+        }
+         public void Cw6()
+        {
+            string[] lines=File.ReadAllLines("filelist.txt");
+            ArrayList array = new ArrayList(lines);
+            array.RemoveRange((lines.Length - 3), 3);
+            string[] dest = (String[])array.ToArray(typeof(string));
+            File.WriteAllLines("filelist1.txt", dest);
+
+        }
+
         private void view(DirectoryInfo d)
         {
             Console.WriteLine("Current dir is " + d.Name);
