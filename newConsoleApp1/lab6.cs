@@ -23,6 +23,7 @@ namespace newConsoleApp1
             j.Remove("vasja");
         }
     }
+    [Serializable]
     public class Student
     {
         public Student()
