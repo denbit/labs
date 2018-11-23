@@ -95,7 +95,39 @@ namespace newConsoleApp1
             File.WriteAllLines("filelist1.txt", dest);
 
         }
+        public void Cw7()
+        {
+            const string fl_name = "binary";
+            int start, step;
+            start = int.Parse(Console.ReadLine());
+            step = int.Parse(Console.ReadLine());
 
+            BinaryWriter b_file = new BinaryWriter(File.Create(fl_name));
+            for (int i = 0; i < 100; i++)
+            {
+                b_file.Write(start);
+                b_file.Write(' ');
+                start += step;
+            }
+
+            b_file.Close();           
+        }
+        public void Cw8()
+        {
+            const string fl_name = "binary";
+            const string fl_name_dest = "binary_sqrts";
+            BinaryReader br = new BinaryReader(File.Open(fl_name, FileMode.Open));
+            BinaryWriter b_file = new BinaryWriter(File.Create(fl_name_dest));
+            while (br.BaseStream.Position != br.BaseStream.Length)
+            {
+                b_file.Write(Math.Pow(br.ReadInt32(),2));
+                br.ReadChar();
+                b_file.Write(' ');
+            }           
+            
+
+            b_file.Close();
+        }
         private void view(DirectoryInfo d)
         {
             Console.WriteLine("Current dir is " + d.Name);
