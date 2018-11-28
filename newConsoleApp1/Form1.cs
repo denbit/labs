@@ -21,7 +21,8 @@ namespace newConsoleApp1
 
         private void hide_Click(object sender, EventArgs e)
         {
-            this.Close();
+           // this.Close();
+            this.Hide();
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.WriteLine("Form was destroyed!");
             Console.BackgroundColor = ConsoleColor.Black;
